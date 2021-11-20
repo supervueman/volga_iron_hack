@@ -1,6 +1,6 @@
-export const serverAddress = 'http://13.58.85.219'
+export const serverAddress = 'https://pavelberkut.ru/' // http://0.0.0.0 http://13.58.85.219 https://pavelberkut.ru/
 
-export const serverPort = 8398
+export const serverPort = ''
 
 export const serverUrl = `${serverAddress}:${serverPort}`
 
