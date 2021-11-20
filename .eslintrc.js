@@ -1,22 +1,47 @@
 module.exports = {
   root: true,
+
   env: {
     node: true,
   },
+
   extends: [
     'plugin:vue/essential',
     '@vue/standard',
     '@vue/typescript/recommended',
   ],
+
   parserOptions: {
     ecmaVersion: 2020,
   },
+
   rules: {
+    '*': 'off',
     'no-debugger': 'off',
     'space-before-function-paren': 'off',
-    'no-console': ['error', { allow: ['warn', 'error'] }],
-    'comma-dangle': ['error', 'always-multiline'],
+    'no-console': [
+      'error',
+      {
+        allow: [
+          'warn',
+          'error'
+        ]
+      }
+    ],
+    'comma-dangle': [
+      'error',
+      'always-multiline'
+    ],
+    'graphql/template-strings': [
+      'error',
+      {
+        env: 'literal',
+        projectName: 'app',
+        schemaJsonFilepath: 'node_modules/.temp/graphql/schema.json'
+      }
+    ]
   },
+
   overrides: [
     {
       files: [
@@ -28,4 +53,8 @@ module.exports = {
       },
     },
   ],
+
+  plugins: [
+    'graphql'
+  ]
 }

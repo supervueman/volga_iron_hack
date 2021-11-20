@@ -1,0 +1,33 @@
+
+query getDefects($filters: DefectDefaultFilterSet) {
+  defects(filters: $filters){
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
+    }
+    edges {
+      node {
+        item
+        pn
+        kilometer
+        meter
+        side
+        parameter
+        location
+        type
+        speedLimit
+        status
+        coordinates
+        id
+        dateCreated
+        dateUpdated
+        dateDeleted
+      }
+      cursor
+    }
+    count
+    total
+  }
+}
