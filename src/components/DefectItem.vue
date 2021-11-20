@@ -46,9 +46,5 @@ export default class DefectItem extends Vue {
 
     return []
   }
-
-  private downloadFile() {
-    window.open(`${serverUrl}/${this.defect.name}`, '_blank')
-  }
 }
 </script>
