@@ -13,7 +13,6 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import { serverUrl } from '@/variables/index'
 
 const defectFields: any = {
   item: 'Объект',
