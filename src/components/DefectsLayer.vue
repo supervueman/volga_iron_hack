@@ -1,9 +1,9 @@
 <template>
   <div class="defects-items">
-    <div v-for="(item, i) in defects" :key="i">
-      <vl-overlay v-if="item.coordinates" id="overlay" :position="item.coordinates">
+    <div v-for="(item, i) in mockDefects" :key="i">
+      <vl-overlay v-if="item.coordinates" :position="item.coordinates">
         <template slot-scope="scope">
-          <vl-feature id="position-feature">
+          <vl-feature>
             <vl-geom-point :coordinates="item.coordinates" />
             <vl-style-box>
               <vl-style-icon src="./marker.png" :scale="0.4" :anchor="[0.5, 1]" />
@@ -32,6 +32,10 @@ import TestGql from '@/graphql/DefectsGql.gql'
 
 import { parseCoordinates } from '@/helpers/index'
 
+import mockDefects from '@/mocks/defects.json'
+
+const e = 45;
+
 @Component({
   components: {
     Map,
@@ -50,24 +54,13 @@ export default class DefectsLayer extends Vue {
   )})
   private readonly defects: any[] = []
 
-  private readonly defectsMock: any[] = [
-    {
-      item: 'Маяч. метка',
-      pn: '1 - 12702',
-      kilometer: '857',
-      meter: '898',
-      side: 'Левая (1)',
-      parameter: '-0.0',
-      location: 'Полностью',
-      type: 'Отсутствует разметка контрольных сечений рельсовой плети',
-      speedLimit: '15 км/ч',
-      status: null,
-      coordinates: [-1.324, 423],
-      id: '5f92e47f-04da-4388-9b41-dbecbc58263d',
-      dateCreated: '2021-11-20T12:16:40.725183',
-      dateUpdated: '2021-11-20T12:16:40.725192',
-      dateDeleted: null,
-    },
-  ]
+  private readonly mockDefects: any[] = mockDefects.map(item => ({
+    ...item,
+    coordinates: [2 * e * Math.random() - e, 2 * e * Math.random() - e]
+  }))
+
+  private mounted() {
+    console.log(this.mockDefects)
+  }
 }
 </script>
