@@ -16,7 +16,9 @@ module.exports = {
   },
 
   rules: {
-    '*': 'off',
+    'indent': 'off',
+    'object-curly-newline': 'off',
+    'object-curly-spacing': 'off',
     'no-debugger': 'off',
     'space-before-function-paren': 'off',
     'no-console': [

@@ -1,6 +1,5 @@
-
-query getDefects($filters: DefectDefaultFilterSet) {
-  defects(filters: $filters){
+query getDefects($filters: DefectDefaultFilterSet, $limit: Int, $offset: Int) {
+  defects(filters: $filters, limit: $limit, offset: $offset){
     pageInfo {
       hasNextPage
       hasPreviousPage
@@ -19,11 +18,10 @@ query getDefects($filters: DefectDefaultFilterSet) {
         type
         speedLimit
         status
+        name
+        month
         coordinates
         id
-        dateCreated
-        dateUpdated
-        dateDeleted
       }
       cursor
     }
