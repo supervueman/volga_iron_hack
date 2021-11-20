@@ -58,9 +58,5 @@ export default class DefectsLayer extends Vue {
     ...item,
     coordinates: [2 * e * Math.random() - e, 2 * e * Math.random() - e]
   }))
-
-  private mounted() {
-    console.log(this.mockDefects)
-  }
 }
 </script>
