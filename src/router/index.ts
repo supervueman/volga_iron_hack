@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 
+import BaseLayout from '@/layouts/BaseLayout.vue'
+
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
@@ -10,7 +12,7 @@ const routes: Array<RouteConfig> = [
     name: 'Home',
     component: Home,
     meta: {
-      layout: () => import('@/layouts/BaseLayout.vue'),
+      layout: BaseLayout,
     },
   },
 ]

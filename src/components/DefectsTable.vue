@@ -54,8 +54,8 @@ export default class DefectsTable extends Vue {
     variables() {
       let filters: any = null
 
-      for (let key in this.filters) {
-        if(this.filters[key]) {
+      for (const key in this.filters) {
+        if (this.filters[key]) {
           if (!filters) {
             filters = {}
           }
@@ -66,7 +66,7 @@ export default class DefectsTable extends Vue {
       return {
         offset: this.pagination.page * this.pagination.itemsPerPage,
         limit: this.pagination.itemsPerPage,
-        ...(filters && { filters })
+        ...(filters && { filters }),
       }
     },
     update: ({ defects }) => {
@@ -162,7 +162,7 @@ export default class DefectsTable extends Vue {
   private changePagination(pagination: any) {
     this.pagination = {
       ...pagination,
-      itemsPerPage: pagination.itemsPerPage === -1 ? null : pagination.itemsPerPage
+      itemsPerPage: pagination.itemsPerPage === -1 ? null : pagination.itemsPerPage,
     }
   }
 

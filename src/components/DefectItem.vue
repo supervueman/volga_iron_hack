@@ -15,18 +15,18 @@
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import { serverUrl } from '@/variables/index'
 
-enum DefectFields {
-  item = 'Объект',
-  pn = 'П-Н',
-  kilometer = 'Км',
-  meter = 'М',
-  side = 'Сторона',
-  parameter = 'Параметр',
-  location = 'Тип',
-  type = 'Дефект',
-  speedLimit = 'Ограничение скорости (км/ч)',
-  status = 'Статус',
-  month = 'Месяц источника данных',
+const defectFields: any = {
+  item: 'Объект',
+  pn: 'П-Н',
+  kilometer: 'Км',
+  meter: 'М',
+  side: 'Сторона',
+  parameter: 'Параметр',
+  location: 'Тип',
+  type: 'Дефект',
+  speedLimit: 'Ограничение скорости (км/ч)',
+  status: 'Статус',
+  month: 'Месяц источника данных',
 }
 
 @Component({})
@@ -39,7 +39,7 @@ export default class DefectItem extends Vue {
 
     if (this.defect) {
       return fields.map((field) => ({
-        name: DefectFields[field],
+        name: defectFields[field],
         value: this.defect[field],
       }))
     }

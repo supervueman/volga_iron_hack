@@ -19,15 +19,13 @@ import { Vue, Component } from 'vue-property-decorator'
 import { SmartQuery } from 'vue-apollo-decorators'
 
 import Map from '@/components/Map.vue'
-import DefectItem from './DefectItem.vue';
+import DefectItem from './DefectItem.vue'
 
 import TestGql from '@/graphql/DefectsGql.gql'
 
 import { parseCoordinates } from '@/helpers/index'
 
 import mockDefects from '@/mocks/defects.json'
-
-const e = 45;
 
 @Component({
   components: {
