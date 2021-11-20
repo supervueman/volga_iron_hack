@@ -6,7 +6,7 @@
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="/static/logo.png"
+          src="/logo.png"
           transition="scale-transition"
           width="100"
         />
