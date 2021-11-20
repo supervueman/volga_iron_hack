@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
-import { serverUrl } from '../variables/index';
+import { serverUrl } from '@/variables/index'
 
 enum DefectFields {
   item = 'Объект',
