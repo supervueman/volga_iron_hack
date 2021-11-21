@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer :value="true" app fixed>
+  <v-navigation-drawer v-model="isPanelOpen" app fixed>
     <v-toolbar color="primary" flat>
       <div class="d-flex align-center">
         <v-img
@@ -8,7 +8,8 @@
           contain
           src="/logo.png"
           transition="scale-transition"
-          width="100"
+          width="80"
+          :mobile-breakpoint="720"
         />
       </div>
     </v-toolbar>
@@ -39,6 +40,14 @@ import DefectsTable from '@/components/DefectsTable.vue'
 })
 export default class NavigationDrawer extends Vue {
   private isDefectsTableOpen = false
+
+  get isPanelOpen() {
+    return this.$store.state.isPanelOpen
+  }
+
+  set isPanelOpen(value) {
+    this.$store.commit('setPanelOpen', value)
+  }
 
   private openDefects() {
     this.isDefectsTableOpen = true
